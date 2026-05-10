@@ -1,15 +1,15 @@
 class AstroSight < Formula
   desc "AST information generator CLI for AI agents"
   homepage "https://github.com/owayo/astro-sight"
-  url "https://github.com/owayo/astro-sight/archive/refs/tags/v26.5.110.tar.gz"
-  sha256 "36f235dfa91347713d46b88dc7e20d87f4eba858dd757c9740e0f032355b98dd"
+  url "https://github.com/owayo/astro-sight/archive/refs/tags/v26.5.111.tar.gz"
+  sha256 "ada9bd9f2cfbf7e5e2aa1418cb9d01b4a6c872d99b2039b46a9fae4e73b64d00"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/owayo/astro-sight/releases/download/v26.5.110"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "91d628de9339801fab516cccc4ce99963575863ad132b97162764a50faeed55a"
-    sha256 cellar: :any_skip_relocation, sonoma: "8dcfc1d35631f65b1d81da7ee44d31ac4a85379cc45f3b0c4676317a57f28788"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ecd7a0077787ba1fd52234d30039a93c2c14aca6764de15008f251a9e73f01bb"
+    root_url "https://github.com/owayo/astro-sight/releases/download/v26.5.111"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "4959912b0dbca8c7f4b1ca264b1617edfd854c3db76f0eeced6c1c140e959da7"
+    sha256 cellar: :any_skip_relocation, sonoma: "06780296d5668960baabffe2066267d599b550e8ebb6dea28c76b68fc5c419b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8d4c94cda34d0f507993d4a04050e83f7cf0ba2644c55dc596337e933cde11c2"
   end
 
   depends_on "rust" => :build
