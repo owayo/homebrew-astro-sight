@@ -1,24 +1,33 @@
 class AstroSight < Formula
   desc "AST information generator CLI for AI agents"
   homepage "https://github.com/owayo/astro-sight"
-  url "https://github.com/owayo/astro-sight/archive/refs/tags/v26.9.103.tar.gz"
-  sha256 "cf43c5640fc31d3feb46ab52bfb82c205bc61e713ce781ffb767a2b2ba9e74bd"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/owayo/astro-sight/releases/download/v26.9.103"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "02782b9a8ae8a088dc07dd19901ee4d47c15ed0d12fd8778bf1a87a793111525"
-    sha256 cellar: :any_skip_relocation, sonoma: "bd263eb84e4271441f45ff0c2ff4555ee3e023635984036696754ad2a82c6026"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "353c92b158cd741b71a0fd7cda157ab9f6fed6be6d0ed19dcaac30eb5c8683fc"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/owayo/astro-sight/releases/download/v26.9.104/astro-sight-aarch64-apple-darwin.tar.gz"
+      sha256 "571c527c83db631fd003b36223a1705cf78b79f9b1af029b3c66ea86856e3cba"
+    else
+      url "https://github.com/owayo/astro-sight/releases/download/v26.9.104/astro-sight-x86_64-apple-darwin.tar.gz"
+      sha256 "0061f40ecf088be64ef2bb1fd3ac7ab713dde125532740e428a5751466326fcc"
+    end
   end
 
-  depends_on "rust" => :build
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/owayo/astro-sight/releases/download/v26.9.104/astro-sight-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "23eb96c91ec467e3741232b0ee457fe0ace708350c244ad0380f0fc5a41a477e"
+    else
+      url "https://github.com/owayo/astro-sight/releases/download/v26.9.104/astro-sight-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "10a08250698e9c66607118874bee12a21f61af410506bbfc5c0803a321da1e56"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "astro-sight"
   end
 
   test do
-    system "#{bin}/astro-sight", "--version"
+    assert_match version.to_s, shell_output("#{bin}/astro-sight --version")
   end
 end
