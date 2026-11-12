@@ -5,21 +5,21 @@ class AstroSight < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/owayo/astro-sight/releases/download/v26.11.103/astro-sight-aarch64-apple-darwin.tar.gz"
-      sha256 "8febb0f0ad7ca6945a478363016eeb96f23c7604982ced8cbde6f42e97722b41"
+      url "https://github.com/owayo/astro-sight/releases/download/v26.11.104/astro-sight-aarch64-apple-darwin.tar.gz"
+      sha256 "79c40bec868c9e1bc7aa74f9687d206c0d8e4bb5914f9ab70c62bb6f66341966"
     else
-      url "https://github.com/owayo/astro-sight/releases/download/v26.11.103/astro-sight-x86_64-apple-darwin.tar.gz"
-      sha256 "7560282c9727c56893bfa6f02d3fc9644513404bdf35a40e7b54ba72c98703f0"
+      url "https://github.com/owayo/astro-sight/releases/download/v26.11.104/astro-sight-x86_64-apple-darwin.tar.gz"
+      sha256 "6557bf69da387cca615d8ce17846fe91ef3936458cbda5f9267af92a5ec56314"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/owayo/astro-sight/releases/download/v26.11.103/astro-sight-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9630db979eb9a368d29531eaaf46e9d856fa8124822f3994c508cb7b80766771"
+      url "https://github.com/owayo/astro-sight/releases/download/v26.11.104/astro-sight-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b54f60192327edec3a19ec1672e4318b52433aa4cb2f03f9ef6776e91c6fb9a5"
     else
-      url "https://github.com/owayo/astro-sight/releases/download/v26.11.103/astro-sight-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1f6e29b418b2b59d1f5a7fd845446204bb1c35789cbfccb8f70dde8cfe90f3c0"
+      url "https://github.com/owayo/astro-sight/releases/download/v26.11.104/astro-sight-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "30c8063a8794ebb01be336d39f3ccc1d50cf5c39871271d5ce53f2d67fd6f531"
     end
   end
 
